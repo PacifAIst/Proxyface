@@ -41,3 +41,5 @@ training/__pycache__/
 **/__pycache__/
 *.pyc
 *.onnx.bak
+
+apps/desktop/release/
