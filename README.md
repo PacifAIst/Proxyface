@@ -87,7 +87,7 @@ Want your character in the official gallery?
 
 **Best AI tool for generation:** [Kimi 2.6 in agent mode](https://kimi.com) (free tier) — attach an existing atlas as reference.
 
-- **Email:** `art@proxyface.com` — subject: `[CHARACTER NAME]`
+- **Email:** `yes@proxyface.com` — subject: `[CHARACTER NAME]`
 - **GitHub PR:** fork → add `sprites/art/yourname/` → open PR with screenshot of all 8 emotion rows
 
 ---
