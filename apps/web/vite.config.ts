@@ -4,11 +4,11 @@ import fs from 'fs';
 import path from 'path';
 
 export default defineConfig({
+  base: './',   // ← TOP LEVEL — makes all asset paths relative for Electron file://
+
   plugins: [
     react(),
     {
-      // Real 404s for missing /models/ and /sprites/ so transformers.js
-      // doesn't try to parse HTML as JSON/binary.
       name: 'static-404',
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
@@ -31,15 +31,11 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     proxy: {
-      // Proxy LM Studio — avoids CORS preflight rejection.
-      // LLMChatPanel sends to /lmstudio/v1/chat/completions,
-      // Vite forwards it to http://localhost:1234/v1/chat/completions.
       '/lmstudio': {
         target: 'http://localhost:1234',
         changeOrigin: true,
         rewrite: (p) => p.replace(/^\/lmstudio/, ''),
       },
-      // Proxy Ollama natively too (avoids CORS on some OS configs).
       '/ollama': {
         target: 'http://localhost:11434',
         changeOrigin: true,

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-05-10T10:18:23.337Z",
+  "generatedAt": "2026-05-10T13:43:14.227Z",
   "characters": [
     {
       "id": "alien",
@@ -311,6 +311,16 @@
       "eyeCount": 1,
       "manifestUrl": "/sprites/art/pirate/manifest.json",
       "atlasUrl": "/sprites/art/pirate/atlas.png"
+    },
+    {
+      "id": "placeholder",
+      "name": "placeholder",
+      "description": "",
+      "author": "",
+      "url": "",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/placeholder/manifest.json",
+      "atlasUrl": "/sprites/art/placeholder/placeholder.png"
     },
     {
       "id": "preteen",

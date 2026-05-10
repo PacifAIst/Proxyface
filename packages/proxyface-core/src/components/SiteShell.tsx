@@ -8,13 +8,15 @@ export type ModalPage = 'terms' | 'privacy' | 'faq' | 'submit-art';
 
 const GITHUB_URL = 'https://github.com/PacifAIst/Proxyface';
 export const RELEASES_URL = 'https://github.com/PacifAIst/Proxyface/releases/latest';
+const YOUTUBE_ID = 'A8DV9MGaRuw';
+
+const isElectron = /electron/i.test(navigator.userAgent);
 
 export function useSiteNav(): [SitePage, (p: SitePage) => void] {
   const [page] = useState<SitePage>('home');
   return [page, () => {}];
 }
 
-// ── Site modal ───────────────────────────────────────────────────────
 export function SiteModal({ page, onClose }: { page: ModalPage; onClose: () => void }) {
   const titles: Record<ModalPage, string> = {
     terms: 'Terms of Use', privacy: 'Privacy Policy',
@@ -45,7 +47,6 @@ export function SiteModal({ page, onClose }: { page: ModalPage; onClose: () => v
   );
 }
 
-// ── Konami code ──────────────────────────────────────────────────────
 const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
 export function useKonamiCode(onSuccess: () => void) {
   const seq = useRef<string[]>([]);
@@ -65,9 +66,17 @@ export function useKonamiCode(onSuccess: () => void) {
   }, [cb]);
 }
 
-// ── Easter egg rain ──────────────────────────────────────────────────
 const SYMBOLS = ['♥','★','⬛','◆','♠','⚡','👾','🎮','♟','⌥','◉','▲'];
 export function EasterEggRain({ active, onDismiss }: { active: boolean; onDismiss: () => void }) {
+  useEffect(() => {
+    if (!active) return;
+    try {
+      const audio = new Audio('/easter.mp3');
+      audio.volume = 0.7;
+      audio.play().catch(() => {});
+    } catch {}
+  }, [active]);
+
   if (!active) return null;
   const items = Array.from({ length: 30 }, (_, i) => ({
     sym: SYMBOLS[i % SYMBOLS.length], left: (i * 3.4) % 100,
@@ -92,7 +101,7 @@ export function EasterEggRain({ active, onDismiss }: { active: boolean; onDismis
           <div className="text-[10px] leading-relaxed text-phosphor mb-3">
             You found a hidden feature 🎮 Send art for <span className="text-phosphor-glow">priority review</span>:
           </div>
-          <div className="mb-3 rounded-sm border border-phosphor/50 bg-crt-950 px-3 py-1.5 text-[11px] font-bold text-phosphor-glow">art@proxyface.com</div>
+          <div className="mb-3 rounded-sm border border-phosphor/50 bg-crt-950 px-3 py-1.5 text-[11px] font-bold text-phosphor-glow">yes@proxyface.com</div>
           <div className="mb-3 text-[9px] text-phosphor-dim">Subject: <span className="text-phosphor">SECRET — [character name]</span></div>
           <button onClick={onDismiss}
             className="w-full rounded-sm border border-phosphor bg-crt-900 py-1.5 text-[10px] uppercase tracking-widest text-phosphor transition-colors hover:bg-phosphor hover:text-crt-950">
@@ -104,45 +113,65 @@ export function EasterEggRain({ active, onDismiss }: { active: boolean; onDismis
   );
 }
 
-// ── Tutorial modal ───────────────────────────────────────────────────
-// ⚠ UPDATE the YouTube ID below when you upload your tutorial video:
-const YOUTUBE_ID = 'A8DV9MGaRuw';
-
 export function TutorialModal({ onClose }: { onClose: () => void }) {
-  return (
-    <div className="fixed inset-0 z-[998] flex items-center justify-center bg-black/80 p-4" onClick={onClose}>
-          {/* Changed max-w-2xl to w-[280px] to make it ~66% smaller and perfectly phone-sized */}
-          <div className="relative w-[280px] rounded-sm border border-crt-600 bg-crt-900 font-mono shadow-crt-inset"
-            onClick={e => e.stopPropagation()}>
-            
-            {/* YOUR TOP FRAME (Intact!) */}
-            <div className="flex items-center justify-between border-b border-crt-700 px-4 py-3">
-              <span className="text-[11px] uppercase tracking-widest text-phosphor-dim">✦ Quick Tutorial ✦</span>
-              <button onClick={onClose} className="text-phosphor-dim hover:text-phosphor">✕</button>
-            </div>
-
-            {/* THE VIDEO FIX: 177.77% makes it exactly a 9:16 vertical Short */}
-            <div className="relative w-full" style={{ paddingBottom: '177.77%' }}>
-              <iframe className="absolute inset-0 h-full w-full"
-                src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
-                title="ProxyFace Quick Tutorial"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen />
-            </div>
-
-            {/* YOUR BOTTOM FRAME (Intact, but made flex-col so it fits the new tiny width) */}
-            <div className="flex flex-col items-center justify-center gap-1 border-t border-crt-700 px-4 py-3 text-[9px] uppercase tracking-widest text-phosphor-dim text-center">
-              <span>watch · learn · use your ai with a face</span>
-              <a href={`https://www.youtube.com/watch?v=${YOUTUBE_ID}`} target="_blank" rel="noreferrer"
-                className="hover:text-phosphor mt-1">open in youtube ↗</a>
-            </div>
-
+  // In Electron, YouTube iframes fail (Error 153). Open in system browser instead.
+  if (isElectron) {
+    return (
+      <div className="fixed inset-0 z-[998] flex items-center justify-center bg-black/80 p-4" onClick={onClose}>
+        <div className="relative w-full max-w-sm rounded-sm border border-crt-600 bg-crt-900 font-mono shadow-crt-inset"
+          onClick={e => e.stopPropagation()}>
+          <div className="flex items-center justify-between border-b border-crt-700 px-4 py-3">
+            <span className="text-[11px] uppercase tracking-widest text-phosphor-dim">✦ Quick Tutorial ✦</span>
+            <button onClick={onClose} className="text-phosphor-dim hover:text-phosphor">✕</button>
+          </div>
+          <div className="p-6 text-center">
+            <div className="mb-3 text-4xl">▶</div>
+            <p className="mb-4 text-[11px] text-phosphor-dim leading-relaxed">
+              The tutorial video opens in your browser — YouTube embeds are not supported in desktop apps.
+            </p>
+            <a href={`https://www.youtube.com/watch?v=${YOUTUBE_ID}`}
+              target="_blank" rel="noreferrer"
+              className="block w-full rounded-sm border border-phosphor bg-crt-900 py-2 text-[10px] uppercase tracking-widest text-phosphor transition-colors hover:bg-phosphor hover:text-crt-950">
+              Open Tutorial on YouTube ↗
+            </a>
+          </div>
+          <div className="border-t border-crt-700 px-4 py-2">
+            <button onClick={onClose}
+              className="w-full rounded-sm border border-crt-700 bg-crt-900 py-1.5 text-[9px] uppercase tracking-widest text-phosphor-dim transition-colors hover:border-phosphor hover:text-phosphor">
+              Close
+            </button>
           </div>
         </div>
+      </div>
+    );
+  }
+
+  // Web: embed YouTube iframe normally
+  return (
+    <div className="fixed inset-0 z-[998] flex items-center justify-center bg-black/80 p-4" onClick={onClose}>
+      <div className="relative w-[280px] rounded-sm border border-crt-600 bg-crt-900 font-mono shadow-crt-inset"
+        onClick={e => e.stopPropagation()}>
+        <div className="flex items-center justify-between border-b border-crt-700 px-4 py-3">
+          <span className="text-[11px] uppercase tracking-widest text-phosphor-dim">✦ Quick Tutorial ✦</span>
+          <button onClick={onClose} className="text-phosphor-dim hover:text-phosphor">✕</button>
+        </div>
+        <div className="relative w-full" style={{ paddingBottom: '177.77%' }}>
+          <iframe className="absolute inset-0 h-full w-full"
+            src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
+            title="ProxyFace Quick Tutorial"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen />
+        </div>
+        <div className="flex flex-col items-center justify-center gap-1 border-t border-crt-700 px-4 py-3 text-[9px] uppercase tracking-widest text-phosphor-dim text-center">
+          <span>watch · learn · use your ai with a face</span>
+          <a href={`https://www.youtube.com/watch?v=${YOUTUBE_ID}`} target="_blank" rel="noreferrer"
+            className="hover:text-phosphor mt-1">open in youtube ↗</a>
+        </div>
+      </div>
+    </div>
   );
 }
 
-// ── Shared header ────────────────────────────────────────────────────
 interface HeaderProps {
   page: SitePage;
   setPage: (p: SitePage) => void;
@@ -160,7 +189,6 @@ export function SiteHeader({ page: _page, setPage: _setPage, onEnterDemo: _onEnt
   return (
     <>
       <header className="relative z-10 flex items-center justify-between gap-2 border-b border-crt-700 px-5 py-3 shrink-0">
-        {/* Ghost title */}
         <div aria-hidden
           className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 select-none whitespace-nowrap font-mono text-[12vw] font-black uppercase leading-none text-phosphor"
           style={{ opacity: 0.035, textShadow:'0 0 40px rgba(245,185,66,0.2)', marginTop:'-1.5vw' }}>
@@ -202,7 +230,6 @@ export function SiteHeader({ page: _page, setPage: _setPage, onEnterDemo: _onEnt
             </>
           )}
           <span className="text-crt-700">·</span>
-          {/* Theme toggle — replaces GitHub button on far right */}
           <button type="button" onClick={toggleTheme}
             title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             className="rounded-sm border border-crt-700 bg-crt-900 px-2 py-0.5 text-[12px] transition-colors hover:border-phosphor hover:text-phosphor">
@@ -215,7 +242,6 @@ export function SiteHeader({ page: _page, setPage: _setPage, onEnterDemo: _onEnt
   );
 }
 
-// ── Shared footer ────────────────────────────────────────────────────
 export function SiteFooter({ onModal }: { onModal?: (p: ModalPage) => void }) {
   return (
     <footer className="relative z-10 shrink-0 border-t border-crt-700 px-5 py-2 font-mono">

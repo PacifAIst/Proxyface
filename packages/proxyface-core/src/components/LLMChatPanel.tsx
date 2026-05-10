@@ -358,7 +358,8 @@ export function LLMChatPanel({ engine, config, onOpenSettings, settings, tracker
               hf.isListening ? (hfTextRef.current || 'HF listening… speak freely') :
               streaming ? 'streaming…' :
               fileContext ? 'Ask something about the file…' :
-              'Type a prompt, use 🎤 mic, or hold Alt+T…'
+              /electron/i.test(navigator.userAgent)
+                ? 'Type a prompt (🎤 mic unavailable in Windows app due to Electron uses open-source Chromium without Google\'s speech servers)' : 'Type a prompt, hands free (HF), use 🎤 mic, or hold/unhold Alt+T…'
             }
             rows={3}
             disabled={!config || streaming}

@@ -1,13 +1,20 @@
 {
   "appId": "com.pacifaist.proxyface",
   "productName": "ProxyFace",
+  "asar": false,
   "directories": {
     "output": "release"
   },
   "files": [
     "electron.cjs",
-    "preload.cjs",
-    "../../apps/web/dist/**"
+    "preload.cjs"
+  ],
+  "extraResources": [
+    {
+      "from": "../../apps/web/dist",
+      "to": "dist",
+      "filter": ["**/*"]
+    }
   ],
   "win": {
     "target": "nsis",

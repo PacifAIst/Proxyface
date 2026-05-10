@@ -5,13 +5,30 @@ import {
   PlatformProvider,
   ProxyFaceWorkstation,
   resolveAssetUrls,
+  type AssetUrls,
 } from '@proxyface/core';
 import '@proxyface/core/styles';
 
 const rootEl = document.getElementById('root');
 if (!rootEl) throw new Error('#root element missing from index.html');
 
-const assets = resolveAssetUrls();
+// Detect Electron via userAgent — works without preload, always reliable
+const isElectron = /electron/i.test(navigator.userAgent);
+
+function getAssets(): AssetUrls {
+  if (isElectron) {
+    // Main process registers app:// protocol → resources/dist/
+    return {
+      models:  'app://dist/models/',
+      sprites: 'app://dist/sprites/',
+      vision:  'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm',
+      visionModel: 'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task',
+    };
+  }
+  return resolveAssetUrls();
+}
+
+const assets = getAssets();
 
 type Route = 'landing' | 'demo';
 
@@ -23,21 +40,6 @@ function getRoute(): Route {
 }
 
 function goHome() {
-  // Strip ?proxyface= from the URL so getRoute() no longer forces
-  // 'demo' after navigating back from a share link.
-  const url = new URL(window.location.href);
-  let mutated = false;
-  if (url.searchParams.has('proxyface')) {
-    url.searchParams.delete('proxyface');
-    mutated = true;
-  }
-  if (url.searchParams.has('mock')) {
-    url.searchParams.delete('mock');
-    mutated = true;
-  }
-  if (mutated) {
-    window.history.replaceState(null, '', url.toString());
-  }
   window.location.hash = '';
   window.dispatchEvent(new HashChangeEvent('hashchange'));
 }
@@ -55,11 +57,8 @@ async function probeModelAvailable(modelBaseUrl: string): Promise<boolean> {
 
 function App() {
   const [route, setRoute] = useState<Route>(getRoute());
-  const params = new URLSearchParams(window.location.search);
-  const forceMock = params.has('mock');
-  // Read the ?proxyface= param once at mount — passed as prop, not via localStorage
-  const initialCharacterId = params.get('proxyface') ?? undefined;
-
+  const forceMock = new URLSearchParams(window.location.search).has('mock');
+  const initialCharacterId = new URLSearchParams(window.location.search).get('proxyface') ?? undefined;
   const [autoMock, setAutoMock] = useState<boolean | null>(forceMock ? true : null);
 
   useEffect(() => {
@@ -80,7 +79,7 @@ function App() {
   if (route === 'landing') {
     return (
       <LandingPage
-        manifestUrl={`${assets.sprites}placeholder.manifest.json`}
+        manifestUrl={`${assets.sprites}placeholder/manifest.json`}
         onEnterDemo={() => { window.location.hash = '#/demo'; }}
         chromeStoreUrl="https://chromewebstore.google.com/"
         firefoxStoreUrl="https://addons.mozilla.org/"

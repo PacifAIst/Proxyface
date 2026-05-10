@@ -1,7 +1,6 @@
-// Context bridge — expose safe Electron APIs to the renderer if needed.
-// Currently empty; ProxyFace runs as a pure web app.
+// Minimal preload — Electron detection now uses navigator.userAgent in renderer.
+// contextBridge kept for future use.
 const { contextBridge } = require('electron');
-
 contextBridge.exposeInMainWorld('electron', {
   platform: process.platform,
 });
