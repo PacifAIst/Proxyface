@@ -1,211 +1,153 @@
 # ProxyFace
 
-> A privacy-first, edge-computed visual AI companion. 100% local. No telemetry, no cloud inference.
+> **Your AI now has a face, emotions, ears, voice, eyes — and a soul.**  
+> 100% local inference. Zero telemetry. Zero cloud. Just vibes.
 
-ProxyFace renders a 16-bit pixel-art avatar that reacts in real time to LLM
-output (ChatGPT, Claude, Gemini) and follows your eyes via webcam — all
-running locally in the browser via WebAssembly and WebGPU.
+![ProxyFace Landing Page — dark mode with Preteen character selected](docs/screenshots/1_landing_dark.png)
 
-It ships as **three targets from one codebase**:
-
-- 🟢 **Chrome extension** — toolbar popup + full-page mode (Manifest V3)
-- 🦊 **Firefox extension** — toolbar popup + full-page mode (Manifest V3)
-- 🌐 **Standalone web app** — full-page experience at any URL
+ProxyFace renders a pixel-art avatar that reacts in **real time** to LLM output via a 4 MB TinyBERT emotion model running entirely on your GPU (WebGPU) or CPU (WASM). It listens, speaks, watches your eyes, and never sends a single byte of your conversation anywhere.
 
 ---
 
-## Status
+## ✨ What makes it special
 
-This is **step 1 of an 8-step build plan**: the monorepo foundation. A shared
-"Hello ProxyFace" placeholder renders identically across all three targets,
-proving the build pipeline end-to-end. Steps 2–8 layer in the TinyBERT
-emotion model, the avatar engine, eye-tracking, voice I/O, LLM integration,
-and store-ready packaging.
+### 🎧 Hands-Free (HF) — learn languages while you talk
+Hold **Alt+T** to speak. Release to send. The AI replies in your target language with its face reacting to every word — embarrassed, curious, delighted. No typing. No clicking. Just conversation.
 
-| Step | Scope | Status |
-|------|-------|--------|
-| 1 | Monorepo + shared core + placeholder | ✅ |
-| 2 | TinyBERT training → INT8 ONNX | ✅ |
-| 3 | Local emotion inference engine | ✅ |
-| 4 | Pixel art avatar + 8-state machine | ✅ |
-| 5 | Eye-tracking via MediaPipe | ✅ |
-| 6 | Voice I/O + LLM page integration | ✅ |
-| 7 | Cross-browser shell + full-screen web | ✅ |
-| 8 | Performance hardening + store release | ✅ |
+> *"I use it to practice Japanese. The pumpkin face going SURPRISED every time I say something wrong is weirdly motivating."*
 
----
+### 🧠 4 MB emotion brain — runs at 60 ms on your GPU
+TinyBERT INT8 ONNX, trained on 3 200 sentences across 8 emotions. Runs via WebGPU in Chrome — no Python, no server, no API key for inference. The face reacts to the AI's output, not yours.
 
-## Where to go next
+### 🎨 40+ pixel-art characters — or submit your own
+![Character gallery — Dev, Daruma, Console, Terminator](docs/screenshots/3_characters.png)
 
-- **Running it end-to-end for the first time** → `docs/RUNBOOK.md`
-  (the detailed non-expert-friendly guide)
-- **Reproducibility / paper submission** → `docs/MODEL_CARD.md` and
-  `docs/RUNBOOK.md` Section 12
-- **Submitting to the stores** → `store/SUBMISSION_CHECKLIST.md`
-- **Privacy story** → `docs/PRIVACY.md`
-- **Re-authoring the sprite atlas** → `sprites/README.md`
+Drop a sprite sheet in `sprites/art/yourname/` and run one sync script. Your character appears instantly. [Submit it to us](#submit-your-art) for priority review and a place in the official gallery.
+
+### 👁️ Eye tracking — opt-in, on-device
+MediaPipe face landmarker runs locally. The pupils follow your gaze. No video ever leaves your machine.
+
+### 🔊 Voice I/O — bot mode, natural mode, or silent
+- **Bot mode**: typewriter sound while the AI streams
+- **Natural mode**: browser TTS reads the reply aloud
+- **HF mode**: hold Alt+T → speak → auto-send → AI replies
+
+### 🔒 Privacy-proof
+Zero network calls for inference. Your API key lives in `localStorage`, never transmitted to us. GPL-3.0 — read every line.
 
 ---
 
-## Repository layout
+## Screenshots
 
-```
-proxyface/
-├── apps/
-│   ├── chrome-ext/          # Chrome MV3 extension
-│   ├── firefox-ext/         # Firefox MV3 extension
-│   └── web/                 # Standalone web app
-└── packages/
-    └── proxyface-core/      # Shared React, hooks, types, design tokens
-```
+| Dark mode | Light mode |
+|-----------|------------|
+| ![Landing dark](docs/screenshots/1_landing_dark.png) | ![Landing light](docs/screenshots/2_landing_light.png) |
 
-All three apps depend on `@proxyface/core` via pnpm workspaces. Anything that
-should look or behave the same across targets (the avatar, the emotion
-state machine, the design tokens, the eye-tracking hook) lives in
-`proxyface-core`. Anything target-specific (manifests, popup chrome,
-service workers, content scripts) lives in `apps/*`.
+![Demo — Pumpkin character, HF listening mode active, emotion IDLE](docs/screenshots/4_demo_pumpkin.png)
 
 ---
 
-## Prerequisites
+## 🚀 Quickstart
 
-- **Node.js 20.10+**
-- **pnpm 9+** — install with `corepack enable && corepack prepare pnpm@latest --activate`
-- For Firefox dev: **`web-ext`** (optional) — `npm i -g web-ext`
-
----
-
-## Quickstart
-
+### Web (browser, any OS)
 ```bash
-# 1. Install everything (all three apps + shared core)
+git clone https://github.com/PacifAIst/Proxyface.git
+cd Proxyface
 pnpm install
-
-# 2. (Optional) Train the emotion model — step 2.
-#    You can skip this and run everything in mock mode.
-cd training
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-python scripts/make_dataset.py
-python scripts/train_model.py
-python scripts/export_to_onnx.py
-cd ..
-
-# 3. Run any of the three targets.
-#    Each target's `predev` hook auto-copies the trained model
-#    into public/models/ first (or writes a placeholder if step 2
-#    hasn't been run).
-pnpm dev:web        # → http://localhost:5173
-pnpm dev:chrome     # → builds to apps/chrome-ext/dist/ in watch mode
-pnpm dev:firefox    # → builds to apps/firefox-ext/dist/ in watch mode
-
-# Or run all three in parallel (uses Turborepo)
-pnpm dev
-```
-
-### Mock mode (no training required)
-
-If you haven't trained the model yet but want to see step 3 working:
-
-- **Web:** visit `http://localhost:5173/?mock=1` — uses the regex
-  classifier instead of the worker.
-- **Extensions:** flip `useMock={true}` in the fullpage entry
-  (`apps/*/src/fullpage/main.tsx`) temporarily.
-
-The mock hits 8/8 on canonical probes but is strictly for development —
-the real TinyBERT model does the heavy lifting in production.
-
-### Loading the Chrome extension
-
-1. `pnpm dev:chrome` (keeps rebuilding on file changes)
-2. Open `chrome://extensions`
-3. Toggle **Developer mode** on (top right)
-4. Click **Load unpacked** → select `apps/chrome-ext/dist/`
-5. Pin ProxyFace to your toolbar and click the icon
-
-### Loading the Firefox extension
-
-1. `pnpm dev:firefox`
-2. Open `about:debugging#/runtime/this-firefox`
-3. Click **Load Temporary Add-on…**
-4. Select `apps/firefox-ext/dist/manifest.json`
-5. Click the ProxyFace icon in the toolbar
-
-> **Tip:** for a smoother Firefox loop, install `web-ext` and run
-> `web-ext run --source-dir=apps/firefox-ext/dist` — it auto-reloads on
-> rebuild and launches a clean profile.
-
-### Running the standalone web app
-
-```bash
-pnpm dev:web
+cd apps/web && pnpm dev
 # open http://localhost:5173
 ```
 
----
+### Windows desktop app
+Download **[ProxyFace Setup 0.1.0.exe](https://github.com/PacifAIst/Proxyface/releases/latest)** from Releases.  
+> Windows SmartScreen may appear — click **More info → Run anyway**. This is expected for unsigned indie apps.
 
-## Production builds
-
-```bash
-pnpm build              # Builds all three targets in parallel
-pnpm build:web          # → apps/web/dist/
-pnpm build:chrome       # → apps/chrome-ext/dist/
-pnpm build:firefox      # → apps/firefox-ext/dist/
-
-# Package the extensions for store submission
-pnpm --filter @proxyface/chrome-ext run package    # → proxyface-chrome.zip
-pnpm --filter @proxyface/firefox-ext run package   # → proxyface-firefox.xpi
-```
+### Mock mode (no API key needed)
+Visit `http://localhost:5173/?mock=1` — uses a regex classifier instead of the neural model. Good for UI testing.
 
 ---
 
-## Verifying step 1
+## 🎮 Secret easter eggs
 
-You'll know the scaffold is working when **the same pixel-art ProxyFace
-placeholder renders in all five surfaces** with the only visible
-difference being the small `surface:` debug pill at the bottom:
-
-- `surface: Web App` — http://localhost:5173
-- `surface: Extension Popup` — Chrome toolbar click
-- `surface: Extension Full Page` — Chrome popup → ⤢ Max button
-- `surface: Extension Popup` — Firefox toolbar click
-- `surface: Extension Full Page` — Firefox popup → ⤢ Max button
-
-The face should breathe, blink, and sit inside a flickering CRT bezel
-with a sweeping scanline. That confirms:
-
-1. The shared `@proxyface/core` package resolves correctly from every app
-2. The Tailwind preset (and its CRT design tokens) is active everywhere
-3. The shared CSS/animations load
-4. The platform context wiring works
+There are hidden features. The Konami code is a good place to start.  
+`↑ ↑ ↓ ↓ ← → ← → B A`
 
 ---
 
-## Tech stack
+## 🎨 Submit your art
+
+Want your character in the official gallery?
+
+**Specs:** 4096×2048 PNG · 16 columns × 8 rows · 256×256 px per cell · 8 emotion rows · transparent background · 1993 pixel-art style
+
+**Best AI tool for generation:** [Kimi 2.6 in agent mode](https://kimi.com) (free tier) — attach an existing atlas as reference.
+
+- **Email:** `art@proxyface.com` — subject: `[CHARACTER NAME]`
+- **GitHub PR:** fork → add `sprites/art/yourname/` → open PR with screenshot of all 8 emotion rows
+
+---
+
+## ⚙️ Tech stack
 
 | Concern | Choice |
 |---|---|
 | Monorepo | pnpm workspaces + Turborepo |
 | Framework | React 18 + TypeScript 5 |
 | Bundler | Vite 5 |
-| Styling | Tailwind CSS 3 (shared preset) |
-| Extension format | Manifest V3 (Chrome + Firefox) |
-| ML runtime *(step 3)* | `@xenova/transformers` on ONNX Runtime Web |
-| Vision *(step 5)* | `@mediapipe/tasks-vision` |
-| Voice *(step 6)* | Native Web Speech API |
+| Styling | Tailwind CSS 3 (shared CRT preset) |
+| Emotion model | TinyBERT INT8 ONNX via `@huggingface/transformers` |
+| ML runtime | ONNX Runtime Web (WebGPU + WASM fallback) |
+| Vision | `@mediapipe/tasks-vision` (on-device) |
+| Voice | Web Speech API + browser TTS |
+| Desktop | Electron 30 |
 
 ---
 
-## Privacy
+## 🔧 Development
 
-No data ever leaves your device. ProxyFace makes zero network requests
-for inference. The only outbound traffic on first install is fetching
-the quantized ML model (~5 MB) from the extension/web bundle itself,
-after which it's cached in IndexedDB. The full privacy policy lives
-alongside the store listings (step 8).
+```bash
+pnpm install          # install everything
+cd apps/web
+pnpm dev              # http://localhost:5173
+
+# Sync sprites + models into public/ before building
+pnpm sync-assets
+
+# Production build
+pnpm build
+```
+
+### Retrain the emotion model
+Open `proxyface_train_v9.ipynb` in Google Colab (T4 GPU).  
+Upload `proxyface_emotions.jsonl` → Run All → download zip → drop into `packages/proxyface-core/src/assets/models/emotion/`.
 
 ---
 
-## License
+## 📁 Repository layout
 
-MIT.
+```
+proxyface/
+├── apps/
+│   ├── desktop/             # Electron wrapper
+│   └── web/                 # Standalone web app (also embedded in desktop)
+└── packages/
+    └── proxyface-core/      # Shared React components, hooks, ML worker, design tokens
+        └── src/
+            ├── assets/models/emotion/   # TinyBERT INT8 ONNX + tokenizer
+            └── assets/sprites/art/      # Character sprite sheets
+```
+
+---
+
+## 📄 License
+
+**GPL-3.0** — free to use, fork, and modify. Derivative works must remain open source.  
+Training data and notebook are not included in the repository (proprietary dataset).
+
+---
+
+## ⭐ Star us
+
+If ProxyFace made your AI feel alive, [give us a star](https://github.com/PacifAIst/Proxyface) — it helps more than you think.
+
+Contact: [yes@proxyface.com](mailto:yes@proxyface.com)
