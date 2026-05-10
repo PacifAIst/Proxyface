@@ -1,186 +1,55 @@
 {
   "version": 1,
-  "atlas": "placeholder.png",
-  "pupilSprite": "placeholder.pupil.png",
-  "frameSize": {
-    "width": 256,
-    "height": 256
-  },
+  "name": "Periscope",
+  "description": "An old vintage periscope in black and white.",
+  "author": "Proxyface",
+  "url": "https://proxyface.com",
+  "eyeCount": 1,
+  "atlas": "atlas.png",
+  "pupilSprite": "pupil.png",
+  "frameSize":  { "width": 256, "height": 256 },
   "frameCount": 16,
   "defaultFps": 8,
   "rows": [
-    {
-      "emotion": "IDLE",
-      "row": 0,
-      "pupilAnchor": {
-        "x": 106,
-        "y": 118
-      },
-      "pupilAnchorRight": {
-        "x": 150,
-        "y": 118
-      },
-      "pupilRange": {
-        "x": 3,
-        "y": 2
-      },
-      "blinkFrames": [
-        7,
-        8
-      ],
-      "fps": 8
-    },
-    {
-      "emotion": "THINKING",
-      "row": 1,
-      "pupilAnchor": {
-        "x": 106,
-        "y": 118
-      },
-      "pupilAnchorRight": {
-        "x": 150,
-        "y": 118
-      },
-      "pupilRange": {
-        "x": 3,
-        "y": 2
-      },
-      "blinkFrames": [
-        7,
-        8
-      ],
-      "fps": 10
-    },
-    {
-      "emotion": "HAPPY",
-      "row": 2,
-      "pupilAnchor": {
-        "x": 106,
-        "y": 118
-      },
-      "pupilAnchorRight": {
-        "x": 150,
-        "y": 118
-      },
-      "pupilRange": {
-        "x": 3,
-        "y": 2
-      },
-      "blinkFrames": [
-        7,
-        8
-      ],
-      "fps": 10
-    },
-    {
-      "emotion": "SAD",
-      "row": 3,
-      "pupilAnchor": {
-        "x": 106,
-        "y": 118
-      },
-      "pupilAnchorRight": {
-        "x": 150,
-        "y": 118
-      },
-      "pupilRange": {
-        "x": 3,
-        "y": 2
-      },
-      "blinkFrames": [
-        7,
-        8
-      ],
-      "fps": 6
-    },
-    {
-      "emotion": "ANGRY",
-      "row": 4,
-      "pupilAnchor": {
-        "x": 106,
-        "y": 118
-      },
-      "pupilAnchorRight": {
-        "x": 150,
-        "y": 118
-      },
-      "pupilRange": {
-        "x": 0,
-        "y": 0
-      },
-      "blinkFrames": [
-        7,
-        8
-      ],
-      "fps": 8
-    },
-    {
-      "emotion": "SURPRISED",
-      "row": 5,
-      "pupilAnchor": {
-        "x": 106,
-        "y": 118
-      },
-      "pupilAnchorRight": {
-        "x": 150,
-        "y": 118
-      },
-      "pupilRange": {
-        "x": 3,
-        "y": 2
-      },
-      "blinkFrames": [
-        7,
-        8
-      ],
-      "fps": 12
-    },
-    {
-      "emotion": "EXPLAINING",
-      "row": 6,
-      "pupilAnchor": {
-        "x": 106,
-        "y": 118
-      },
-      "pupilAnchorRight": {
-        "x": 150,
-        "y": 118
-      },
-      "pupilRange": {
-        "x": 3,
-        "y": 2
-      },
-      "blinkFrames": [
-        7,
-        8
-      ],
-      "fps": 12
-    },
-    {
-      "emotion": "ERROR",
-      "row": 7,
-      "pupilAnchor": {
-        "x": 106,
-        "y": 118
-      },
-      "pupilAnchorRight": {
-        "x": 150,
-        "y": 118
-      },
-      "pupilRange": {
-        "x": 0,
-        "y": 0
-      },
-      "blinkFrames": [
-        7,
-        8
-      ],
-      "fps": 14
-    }
-  ],
-  "meta": {
-    "kind": "placeholder",
-    "generator": "sprites/scripts/build_placeholder_atlas.py",
-    "note": "Replace with Scenario.gg \u2192 Aseprite output. Drop the new PNG + manifest at this path and the runtime will pick it up without code changes."
-  }
+    { "emotion": "IDLE",       "row": 0,
+      "pupilAnchor":      { "x": 128, "y": 119 },
+      "pupilAnchorRight": { "x": 160, "y": 105 },
+      "pupilRange": { "x": 3, "y": 2 },
+      "blinkFrames": [7, 8], "fps": 8 },
+    { "emotion": "THINKING",   "row": 1,
+      "pupilAnchor":      { "x": 128, "y": 119 },
+      "pupilAnchorRight": { "x": 151, "y": 90 },
+      "pupilRange": { "x": 3, "y": 2 },
+      "blinkFrames": [7, 8], "fps": 10 },
+    { "emotion": "HAPPY",      "row": 2,
+      "pupilAnchor":      { "x": 128, "y": 119 },
+      "pupilAnchorRight": { "x": 160, "y": 95 },
+      "pupilRange": { "x": 3, "y": 2 },
+      "blinkFrames": [7, 8], "fps": 10 },
+    { "emotion": "SAD",        "row": 3,
+      "pupilAnchor":      { "x": 128, "y": 119 },
+      "pupilAnchorRight": { "x": 156, "y": 100 },
+      "pupilRange": { "x": 3, "y": 2 },
+      "blinkFrames": [7, 8], "fps": 6 },
+    { "emotion": "ANGRY",      "row": 4,
+      "pupilAnchor":      { "x": 128, "y": 119 },
+      "pupilAnchorRight": { "x": 157, "y": 105 },
+      "pupilRange": { "x": 3, "y": 2 },
+      "blinkFrames": [7, 8], "fps": 8 },
+    { "emotion": "SURPRISED",  "row": 5,
+      "pupilAnchor":      { "x": 128, "y": 119 },
+      "pupilAnchorRight": { "x": 156, "y": 100 },
+      "pupilRange": { "x": 3, "y": 2 },
+      "blinkFrames": [], "fps": 12 },
+    { "emotion": "EXPLAINING", "row": 6,
+      "pupilAnchor":      { "x": 128, "y": 119 },
+      "pupilAnchorRight": { "x": 160, "y": 90 },
+      "pupilRange": { "x": 3, "y": 2 },
+      "blinkFrames": [7, 8], "fps": 12 },
+    { "emotion": "ERROR",      "row": 7,
+      "pupilAnchor":      { "x": 128, "y": 119 },
+      "pupilAnchorRight": { "x": 156, "y": 105 },
+      "pupilRange": { "x": 3, "y": 2 },
+      "blinkFrames": [7, 8], "fps": 14 }
+  ]
 }
