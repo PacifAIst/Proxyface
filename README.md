@@ -69,8 +69,7 @@ Visit `http://localhost:5173/?mock=1` — uses a regex classifier instead of the
 
 ## 🎮 Secret easter eggs
 
-There are hidden features. The Konami code is a good place to start.  
-`↑ ↑ ↓ ↓ ← → ← → B A`
+There are hidden features. 
 
 ---
 
