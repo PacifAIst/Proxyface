@@ -1,0 +1,26 @@
+{
+  "labels": [
+    "IDLE",
+    "THINKING",
+    "HAPPY",
+    "SAD",
+    "ANGRY",
+    "SURPRISED",
+    "EXPLAINING",
+    "ERROR"
+  ],
+  "id2label": {
+    "0": "IDLE",
+    "1": "THINKING",
+    "2": "HAPPY",
+    "3": "SAD",
+    "4": "ANGRY",
+    "5": "SURPRISED",
+    "6": "EXPLAINING",
+    "7": "ERROR"
+  },
+  "version": "0.4.0",
+  "model_base": "prajjwal1/bert-tiny",
+  "quantization": "dynamic_int8",
+  "opset": 17
+}

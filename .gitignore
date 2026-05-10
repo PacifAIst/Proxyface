@@ -1,0 +1,43 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build outputs
+dist/
+build/
+.turbo/
+*.tsbuildinfo
+
+# extension packaged artifacts
+*.zip
+*.crx
+*.xpi
+web-ext-artifacts/
+
+# env / secrets
+.env
+.env.local
+.env.*.local
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.recommended.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# ML training artifacts — see training/.gitignore for details.
+# Final model files live under packages/proxyface-core/src/assets/models/
+# and are *committed* (so the extension can ship them without a separate
+# download step). Training intermediates are not.
+training/.venv/
+training/__pycache__/
+**/__pycache__/
+*.pyc
+*.onnx.bak

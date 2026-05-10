@@ -1,0 +1,20 @@
+{
+  "appId": "com.pacifaist.proxyface",
+  "productName": "ProxyFace",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "electron.cjs",
+    "preload.cjs",
+    "../../apps/web/dist/**"
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "../../apps/web/public/favicon.ico"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  }
+}

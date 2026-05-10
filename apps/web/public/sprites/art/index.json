@@ -1,0 +1,476 @@
+{
+  "version": 1,
+  "generatedAt": "2026-05-10T10:01:16.533Z",
+  "characters": [
+    {
+      "id": "alien",
+      "name": "Alien",
+      "description": "Just to probe your motherboard in Area 83.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/alien/manifest.json",
+      "atlasUrl": "/sprites/art/alien/atlas.png"
+    },
+    {
+      "id": "arcade",
+      "name": "Arcade",
+      "description": "Ate your allowance, currently hungering for your soul.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/arcade/manifest.json",
+      "atlasUrl": "/sprites/art/arcade/atlas.png"
+    },
+    {
+      "id": "bouncer",
+      "name": "Bouncer",
+      "description": "Error 403: Access Denied in human form.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/bouncer/manifest.json",
+      "atlasUrl": "/sprites/art/bouncer/atlas.png"
+    },
+    {
+      "id": "brain",
+      "name": "Brain",
+      "description": "Minimum system requirements met.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/brain/manifest.json",
+      "atlasUrl": "/sprites/art/brain/atlas.png"
+    },
+    {
+      "id": "bull",
+      "name": "Bull",
+      "description": "A bull ready for bullfighters",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/bull/manifest.json",
+      "atlasUrl": "/sprites/art/bull/atlas.png"
+    },
+    {
+      "id": "burger",
+      "name": "Burger",
+      "description": "+50 HP health potion for late-night crunch time.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/burger/manifest.json",
+      "atlasUrl": "/sprites/art/burger/atlas.png"
+    },
+    {
+      "id": "calculator",
+      "name": "Calculator",
+      "description": "Type 5318008, flip upside down, achieve nirvana.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/calculator/manifest.json",
+      "atlasUrl": "/sprites/art/calculator/atlas.png"
+    },
+    {
+      "id": "car",
+      "name": "Car",
+      "description": "A red racing car with huge eyes.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/car/manifest.json",
+      "atlasUrl": "/sprites/art/car/atlas.png"
+    },
+    {
+      "id": "cat",
+      "name": "Cat",
+      "description": "Sez to h00man: I haz Morita.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/cat/manifest.json",
+      "atlasUrl": "/sprites/art/cat/atlas.png"
+    },
+    {
+      "id": "console",
+      "name": "Console",
+      "description": "Runs on AA batteries and pure, unadulterated childhood joy. He does a certain famous code for a secret easter egg.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/console/manifest.json",
+      "atlasUrl": "/sprites/art/console/atlas.png"
+    },
+    {
+      "id": "count",
+      "name": "Count",
+      "description": "A time-traveler Count from Spanish colonies.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/count/manifest.json",
+      "atlasUrl": "/sprites/art/count/atlas.png"
+    },
+    {
+      "id": "croupier",
+      "name": "Croupier",
+      "description": "Donal can shuffle and deal 33 times in under 6 seconds for a prize (tip for a secret easter egg).",
+      "author": "Proxyface",
+      "url": "https://compuwood.com/",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/croupier/manifest.json",
+      "atlasUrl": "/sprites/art/croupier/atlas.png"
+    },
+    {
+      "id": "cyborg",
+      "name": "Cyborg",
+      "description": "Model MHM-1983 and father of Proxyface.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/cyborg/manifest.json",
+      "atlasUrl": "/sprites/art/cyborg/atlas.png"
+    },
+    {
+      "id": "cyclops",
+      "name": "Cyclops",
+      "description": "Great 144Hz refresh rate, but only one optical sensor.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 1,
+      "manifestUrl": "/sprites/art/cyclops/manifest.json",
+      "atlasUrl": "/sprites/art/cyclops/atlas.png"
+    },
+    {
+      "id": "daruma",
+      "name": "Daruma",
+      "description": "Fill in the other eye when the code compiles on the first try.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/daruma/manifest.json",
+      "atlasUrl": "/sprites/art/daruma/atlas.png"
+    },
+    {
+      "id": "detective",
+      "name": "Detective",
+      "description": "Searching for the missing semicolon that broke the build.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/detective/manifest.json",
+      "atlasUrl": "/sprites/art/detective/atlas.png"
+    },
+    {
+      "id": "dev",
+      "name": "Dev",
+      "description": "This sweaty developer’s code is so heavy, GitHub charges by the pound.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/dev/manifest.json",
+      "atlasUrl": "/sprites/art/dev/atlas.png"
+    },
+    {
+      "id": "dog",
+      "name": "Dog",
+      "description": "The goodest boy on the local network. WOOF! WOOF!!",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/dog/manifest.json",
+      "atlasUrl": "/sprites/art/dog/atlas.png"
+    },
+    {
+      "id": "floppy",
+      "name": "Floppy disk",
+      "description": "Oh cool, you 3D-printed a save icon.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/floppy/manifest.json",
+      "atlasUrl": "/sprites/art/floppy/atlas.png"
+    },
+    {
+      "id": "flower",
+      "name": "Flower",
+      "description": "1UP for your garden; will spit fireballs if provoked.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/flower/manifest.json",
+      "atlasUrl": "/sprites/art/flower/atlas.png"
+    },
+    {
+      "id": "ghost",
+      "name": "Ghost",
+      "description": "The phantom keystroke that ruined your speedrun.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/ghost/manifest.json",
+      "atlasUrl": "/sprites/art/ghost/atlas.png"
+    },
+    {
+      "id": "girl",
+      "name": "Girl",
+      "description": "A nordic posh lil girl",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/girl/manifest.json",
+      "atlasUrl": "/sprites/art/girl/atlas.png"
+    },
+    {
+      "id": "hacker",
+      "name": "Hacker",
+      "description": "¶P€§77¶ h4>< 7|-3 §h4d0w¶",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/hacker/manifest.json",
+      "atlasUrl": "/sprites/art/hacker/atlas.png"
+    },
+    {
+      "id": "hobo",
+      "name": "Hobo",
+      "description": "Invested all his gold in a physical cryptocurrency.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/hobo/manifest.json",
+      "atlasUrl": "/sprites/art/hobo/atlas.png"
+    },
+    {
+      "id": "icecream",
+      "name": "Ice cream",
+      "description": "Thawing out the server room, one scoop at a time.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/icecream/manifest.json",
+      "atlasUrl": "/sprites/art/icecream/atlas.png"
+    },
+    {
+      "id": "kseniia",
+      "name": "Kseniia McTech",
+      "description": "DeepTech blogger with tech tips and more.",
+      "author": "Proxyface",
+      "url": "https://www.youtube.com/@KseniiaMcTech",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/kseniia/manifest.json",
+      "atlasUrl": "/sprites/art/kseniia/atlas.png"
+    },
+    {
+      "id": "monster",
+      "name": "Monster",
+      "description": "A heavyweight monster who also plays as a pivot.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/monster/manifest.json",
+      "atlasUrl": "/sprites/art/monster/atlas.png"
+    },
+    {
+      "id": "parrot",
+      "name": "Parrot",
+      "description": "Just repeats your syntax errors back to you.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/parrot/manifest.json",
+      "atlasUrl": "/sprites/art/parrot/atlas.png"
+    },
+    {
+      "id": "pc",
+      "name": "PC",
+      "description": "A PC from 1983",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/pc/manifest.json",
+      "atlasUrl": "/sprites/art/pc/atlas.png"
+    },
+    {
+      "id": "phone",
+      "name": "Phone",
+      "description": "Requires a dial-up screech to wake up.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/phone/manifest.json",
+      "atlasUrl": "/sprites/art/phone/atlas.png"
+    },
+    {
+      "id": "pirate",
+      "name": "Pirate",
+      "description": "Downloading RAM and pirating floppy disks since 1993.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 1,
+      "manifestUrl": "/sprites/art/pirate/manifest.json",
+      "atlasUrl": "/sprites/art/pirate/atlas.png"
+    },
+    {
+      "id": "preteen",
+      "name": "Preteen",
+      "description": "Ready to save the world, right after finishing math homework.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/preteen/manifest.json",
+      "atlasUrl": "/sprites/art/preteen/atlas.png"
+    },
+    {
+      "id": "proxyface_blue",
+      "name": "Proxyface Blue",
+      "description": "Player 2 has entered the chat.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/proxyface_blue/manifest.json",
+      "atlasUrl": "/sprites/art/proxyface_blue/atlas.png"
+    },
+    {
+      "id": "proxyface_green",
+      "name": "Proxyface Green",
+      "description": "Player 4, carrying the entire squad.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/proxyface_green/manifest.json",
+      "atlasUrl": "/sprites/art/proxyface_green/atlas.png"
+    },
+    {
+      "id": "proxyface_original",
+      "name": "Proxyface Original",
+      "description": "Maximum default avatar energy.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/proxyface_original/manifest.json",
+      "atlasUrl": "/sprites/art/proxyface_original/atlas.png"
+    },
+    {
+      "id": "proxyface_violet",
+      "name": "Proxyface Violet",
+      "description": "Player 3, tragically forced to use the Mad Catz controller.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/proxyface_violet/manifest.json",
+      "atlasUrl": "/sprites/art/proxyface_violet/atlas.png"
+    },
+    {
+      "id": "pumpkin",
+      "name": "Pumpkin",
+      "description": "Spooky, but mostly just waiting for the Steam Halloween Sale.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/pumpkin/manifest.json",
+      "atlasUrl": "/sprites/art/pumpkin/atlas.png"
+    },
+    {
+      "id": "quixote",
+      "name": "Quixote",
+      "description": "Tilting at polygons instead of windmills.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/quixote/manifest.json",
+      "atlasUrl": "/sprites/art/quixote/atlas.png"
+    },
+    {
+      "id": "repo",
+      "name": "Repo",
+      "description": "Chasing the dopamine hit of green contribution squares.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/repo/manifest.json",
+      "atlasUrl": "/sprites/art/repo/atlas.png"
+    },
+    {
+      "id": "rubberduck",
+      "name": "Rubber duck",
+      "description": "Senior Dev. Hears your broken code, judges you silently.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/rubberduck/manifest.json",
+      "atlasUrl": "/sprites/art/rubberduck/atlas.png"
+    },
+    {
+      "id": "skull",
+      "name": "Skull",
+      "description": "Died waiting for the shaders to compile.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/skull/manifest.json",
+      "atlasUrl": "/sprites/art/skull/atlas.png"
+    },
+    {
+      "id": "submarine",
+      "name": "Submarine",
+      "description": "A scary eye attempts to crash into your submarine!",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 1,
+      "manifestUrl": "/sprites/art/submarine/manifest.json",
+      "atlasUrl": "/sprites/art/submarine/atlas.png"
+    },
+    {
+      "id": "surfer",
+      "name": "Surfer",
+      "description": "Naoto Matsumoto is a Japanese surfer who enjoys teaching Taoism and Zen. He said that you are the one projecting the hologram, do you sincerely agree? Alright! your spiritual search is over!",
+      "author": "Proxyface",
+      "url": "https://www.youtube.com/@NaotoMatsumoto",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/surfer/manifest.json",
+      "atlasUrl": "/sprites/art/surfer/atlas.png"
+    },
+    {
+      "id": "teacup",
+      "name": "Teacup",
+      "description": "Java's true final form.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/teacup/manifest.json",
+      "atlasUrl": "/sprites/art/teacup/atlas.png"
+    },
+    {
+      "id": "watch",
+      "name": "Watch",
+      "description": "Beep boop, it's time to stop save-scumming.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/watch/manifest.json",
+      "atlasUrl": "/sprites/art/watch/atlas.png"
+    },
+    {
+      "id": "woman",
+      "name": "Woman",
+      "description": "A standard western female human.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/woman/manifest.json",
+      "atlasUrl": "/sprites/art/woman/atlas.png"
+    },
+    {
+      "id": "zombie",
+      "name": "Zombie",
+      "description": "Still waiting for Half-Life 3.",
+      "author": "Proxyface",
+      "url": "https://proxyface.com",
+      "eyeCount": 2,
+      "manifestUrl": "/sprites/art/zombie/manifest.json",
+      "atlasUrl": "/sprites/art/zombie/atlas.png"
+    }
+  ]
+}

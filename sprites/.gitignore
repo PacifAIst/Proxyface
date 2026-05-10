@@ -1,0 +1,15 @@
+# AI-generated raw frames can be 100+ MB per emotion iteration.
+# Only the baked output under packages/proxyface-core/src/assets/sprites/
+# is committed to git.
+source/
+aseprite/
+exported/
+seeds/
+*.aseprite
+*.ase
+*.psd
+
+# Except: keep the READMEs that describe what goes in each directory
+!source/README.md
+!aseprite/README.md
+!exported/README.md

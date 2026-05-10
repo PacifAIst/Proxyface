@@ -1,0 +1,113 @@
+/* ProxyFace shared globals. */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Theme CSS variables ─────────────────────────────────────────── */
+@layer base {
+  /* Dark theme (default CRT) */
+  :root {
+    color-scheme: dark;
+    --crt-950: #06070d;
+    --crt-900: #0b0f1a;
+    --crt-800: #10162a;
+    --crt-700: #1a2240;
+    --crt-600: #27315a;
+    --phosphor:     #f5b942;
+    --phosphor-dim: #8a661f;
+    --phosphor-glow:#ffd97a;
+    --signal:       #7ad7f0;
+    --signal-dim:   #3a8aa0;
+    --bg-body:      #06070d;
+    --text-body:    #f5b942;
+  }
+
+  /* Light theme */
+  html.light {
+    color-scheme: light;
+    --crt-950: #f4f1eb;
+    --crt-900: #e8e3d8;
+    --crt-800: #d8d0c0;
+    --crt-700: #c0b89a;
+    --crt-600: #a09070;
+    --phosphor:     #7a4800;
+    --phosphor-dim: #b07828;
+    --phosphor-glow:#5a3400;
+    --signal:       #1a6080;
+    --signal-dim:   #2a90b0;
+    --bg-body:      #f4f1eb;
+    --text-body:    #2a1800;
+  }
+
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    background-color: var(--bg-body);
+    color: var(--text-body);
+    font-family: 'VT323', ui-monospace, monospace;
+    -webkit-font-smoothing: antialiased;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    overflow: hidden;
+  }
+
+  canvas[data-pixel] {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer components {
+  .crt-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, 0.18) 3px,
+        rgba(0, 0, 0, 0) 4px
+      ),
+      radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.65) 100%);
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.55), inset 0 0 12px rgba(245, 185, 66, 0.06);
+    mix-blend-mode: multiply;
+  }
+
+  /* In light mode scanlines are very subtle */
+  html.light .crt-overlay {
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0px,
+        rgba(0,0,0,0) 3px,
+        rgba(0,0,0,0.04) 4px,
+        rgba(0,0,0,0) 5px
+      );
+    box-shadow: none;
+  }
+
+  .crt-sweep {
+    position: fixed;
+    inset-x: 0;
+    height: 40px;
+    pointer-events: none;
+    z-index: 51;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(245, 185, 66, 0.04) 50%,
+      transparent 100%
+    );
+    animation: scanline 6s linear infinite;
+  }
+
+  html.light .crt-sweep { display: none; }
+}

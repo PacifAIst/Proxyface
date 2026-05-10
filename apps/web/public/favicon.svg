@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <rect width="16" height="16" fill="#06070d"/>
+  <!-- Face -->
+  <rect x="4" y="3" width="8" height="10" fill="#f5b942"/>
+  <rect x="3" y="4" width="1" height="8" fill="#f5b942"/>
+  <rect x="12" y="4" width="1" height="8" fill="#f5b942"/>
+  <rect x="4" y="2" width="8" height="1" fill="#f5b942"/>
+  <rect x="4" y="13" width="8" height="1" fill="#8a661f"/>
+  <!-- Eyes -->
+  <rect x="6" y="6" width="1" height="2" fill="#06070d"/>
+  <rect x="9" y="6" width="1" height="2" fill="#06070d"/>
+  <!-- Mouth -->
+  <rect x="6" y="10" width="4" height="1" fill="#06070d"/>
+</svg>

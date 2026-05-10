@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06070d" />
+
+    <title>ProxyFace — a face that actually listens</title>
+    <meta
+      name="description"
+      content="A 16-bit pixel art companion that reacts in real time to LLM output and follows your eyes via webcam. 100% local inference, zero telemetry."
+    />
+
+    <!-- Open Graph / social share -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ProxyFace — a face that actually listens" />
+    <meta
+      property="og:description"
+      content="A 16-bit pixel art companion that reacts in real time to LLM output. Runs 100% locally in your browser."
+    />
+    <meta property="og:image" content="/og-preview.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ProxyFace" />
+    <meta
+      name="twitter:description"
+      content="A face that actually listens. Local AI companion for your browser."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Preconnect to font CDN so the CRT type loads without FOUT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
