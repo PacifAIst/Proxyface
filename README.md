@@ -41,9 +41,9 @@ Drop a sprite sheet in `sprites/art/yourname/` and run one sync script. Your cha
 Currently, the following YouTube personalities have their own art!
 | Personality | Description | Proxyface |
 |-------------|-------------|-----------|
-| Naoto Matsumoto | A YouTuber who teaches Taoism and Zen | [Demo](https://proxyface.com/?proxyface=surfer#/demo) |
-| Kseniia McTech | A YouTuber that highlights deep tech news | [Demo](https://proxyface.com/?proxyface=kseniia#/demo) |
-| Donal (a.k.a. The Croupier) | A Spanish YouTuber who is all a character | [Demo](https://proxyface.com/?proxyface=croupier#/demo) |
+| [Naoto Matsumoto](https://www.youtube.com/@NaotoMatsumoto) | A YouTuber who teaches Taoism and Zen | [Demo](https://proxyface.com/?proxyface=surfer#/demo) |
+| [Kseniia McTech](https://www.youtube.com/@KseniiaMcTech) | A YouTuber that highlights deep tech news | [Demo](https://proxyface.com/?proxyface=kseniia#/demo) |
+| [Donal (a.k.a. The Croupier)](https://compuwood.com/) | A Spanish YouTuber who is all a character | [Demo](https://proxyface.com/?proxyface=croupier#/demo) |
 
 ### 👁️ Eye tracking — opt-in, on-device to enhance interactivity
 MediaPipe face landmarker runs locally. The pupils follow your gaze. No video ever leaves your machine.
