@@ -132,7 +132,7 @@ pnpm build
 ```
 
 ### Retrain the emotion model
-Open `proxyface_train_v9.ipynb` in Google Colab (T4 GPU).  
+Open `proxyface_train.ipynb` in Google Colab (T4 GPU).  
 Upload `proxyface_emotions.jsonl` → Run All → download zip → drop into `packages/proxyface-core/src/assets/models/emotion/`.
 
 ---
