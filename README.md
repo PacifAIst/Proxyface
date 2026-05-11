@@ -38,6 +38,13 @@ TinyBERT INT8 ONNX, trained on 3 200 sentences across 8 emotions. Runs via WebGP
 
 Drop a sprite sheet in `sprites/art/yourname/` and run one sync script. Your character appears instantly. Submit it to us for priority for a place in the official gallery.
 
+Currently, the following YouTube personalities have their own art!
+| Personality | Description | Proxyface |
+|-------------|-------------|-----------|
+| Naoto Matsumoto | A YouTuber who teaches Taoism and Zen | [Demo](https://proxyface.com/?proxyface=surfer#/demo) |
+| Kseniia McTech | A YouTuber that highlights deep tech news | [Demo](https://proxyface.com/?proxyface=kseniia#/demo) |
+| Donal (a.k.a. The Croupier) | A Spanish YouTuber who is all a character | [Demo](https://proxyface.com/?proxyface=croupier#/demo) |
+
 ### 👁️ Eye tracking — opt-in, on-device to enhance interactivity
 MediaPipe face landmarker runs locally. The pupils follow your gaze. No video ever leaves your machine.
 
