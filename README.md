@@ -36,7 +36,7 @@ TinyBERT INT8 ONNX, trained on 3 200 sentences across 8 emotions. Runs via WebGP
 ### 🎨 40+ pixel-art characters — or submit your own for a Community-based art
 ![Character gallery — Dev, Daruma, Console, Terminator](docs/screenshots/3_characters.png)
 
-Drop a sprite sheet in `sprites/art/yourname/` and run one sync script. Your character appears instantly. [Submit it to us](#submit-your-art) for priority review and a place in the official gallery.
+Drop a sprite sheet in `sprites/art/yourname/` and run one sync script. Your character appears instantly. Submit it to us for priority for a place in the official gallery.
 
 ### 👁️ Eye tracking — opt-in, on-device to enhance interactivity
 MediaPipe face landmarker runs locally. The pupils follow your gaze. No video ever leaves your machine.
