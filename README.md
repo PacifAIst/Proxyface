@@ -13,7 +13,11 @@
 
 ProxyFace renders a pixel-art avatar that reacts in **real time** to LLM output via a 4 MB TinyBERT emotion model running entirely on your GPU (WebGPU) or CPU (WASM). It listens, speaks, watches your eyes, and never sends a single byte of your conversation anywhere.
 
-Quick 30-second setup [![Watch the video](https://img.youtube.com/vi/A8DV9MGaRuw/maxresdefault.jpg)](https://www.youtube.com/watch?v=A8DV9MGaRuw)
+Quick 30-second setup <p align="center">
+  <a href="https://www.youtube.com/watch?v=A8DV9MGaRuw">
+    <img src="https://img.youtube.com/vi/A8DV9MGaRuw/maxresdefault.jpg" width="300" alt="Watch on YouTube">
+  </a>
+</p>
 
 ---
 
