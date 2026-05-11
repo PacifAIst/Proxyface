@@ -18,25 +18,27 @@ ProxyFace renders a pixel-art avatar that reacts in **real time** to LLM output 
 ## ✨ What makes it special
 
 ### 🎧 Hands-Free (HF) — learn languages while you talk
-Hold **Alt+T** to speak. Release to send. The AI replies in your target language with its face reacting to every word — embarrassed, curious, delighted. No typing. No clicking. Just conversation.
+This HF mode allows you to have a conversation with the AI taking long pauses (configurable in the settings) as the automatic message to send.
+You can also hold **Alt+T** to speak. Release to send. The AI replies in your target language with its face reacting to every word — embarrassed, curious, delighted. No typing. No clicking. Just conversation.
 
 > *"I use it to practice Japanese. The pumpkin face going SURPRISED every time I say something wrong is weirdly motivating."*
 
 ### 🧠 4 MB emotion brain — runs at 60 ms on your GPU
 TinyBERT INT8 ONNX, trained on 3 200 sentences across 8 emotions. Runs via WebGPU in Chrome — no Python, no server, no API key for inference. The face reacts to the AI's output, not yours.
 
-### 🎨 40+ pixel-art characters — or submit your own
+### 🎨 40+ pixel-art characters — or submit your own for a Community-based art
 ![Character gallery — Dev, Daruma, Console, Terminator](docs/screenshots/3_characters.png)
 
 Drop a sprite sheet in `sprites/art/yourname/` and run one sync script. Your character appears instantly. [Submit it to us](#submit-your-art) for priority review and a place in the official gallery.
 
-### 👁️ Eye tracking — opt-in, on-device
+### 👁️ Eye tracking — opt-in, on-device to enhance interactivity
 MediaPipe face landmarker runs locally. The pupils follow your gaze. No video ever leaves your machine.
 
 ### 🔊 Voice I/O — bot mode, natural mode, or silent
+- **HF mode**: fully-auto bilateral conversation
+- **Semi-auto**: hold Alt+T → speak → auto-send → AI replies
 - **Bot mode**: typewriter sound while the AI streams
-- **Natural mode**: browser TTS reads the reply aloud
-- **HF mode**: hold Alt+T → speak → auto-send → AI replies
+- **Natural mode**: browser TTS reads the reply aloud using API TTS (paid, high quality) or the built in (free, medium quality)
 
 ### 🔒 Privacy-proof
 Zero network calls for inference. Your API key lives in `localStorage`, never transmitted to us. GPL-3.0 — read every line.
@@ -147,7 +149,6 @@ proxyface/
 ## 📄 License
 
 **GPL-3.0** — free to use, fork, and modify. Derivative works must remain open source.  
-Training data and notebook are not included in the repository (proprietary dataset).
 
 ---
 
