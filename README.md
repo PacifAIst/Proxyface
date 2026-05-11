@@ -11,7 +11,7 @@
 
 ![ProxyFace Landing Page — dark mode with Preteen character selected](docs/screenshots/1_landing_dark.png)
 
-ProxyFace renders a pixel-art avatar that reacts in **real time** to LLM output via a 4 MB TinyBERT emotion model running entirely on your GPU (WebGPU) or CPU (WASM). It listens, speaks, watches your eyes, and never sends a single byte of your conversation anywhere.
+[ProxyFace.com](https://proxyface.com/) renders a pixel-art avatar that reacts in **real time** to LLM output via a 4 MB TinyBERT emotion model running entirely on your GPU (WebGPU) or CPU (WASM). It listens, speaks, watches your eyes, and never sends a single byte of your conversation anywhere.
 
 Quick 30-second setup:
 <p align="left">
