@@ -20,7 +20,7 @@ Quick 30-second setup:
   </a>
 </p>
 
----
+--- 
 
 ## ✨ What makes it special
 
