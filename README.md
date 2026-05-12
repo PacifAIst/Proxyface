@@ -162,7 +162,7 @@ proxyface/
 
 ## 📄 License
 
-**GPL-3.0** — free to use, fork, and modify. Derivative works must remain open source.  
+**[GPL-3.0](https://github.com/PacifAIst/Proxyface/blob/main/LICENSE)** — free to use, fork, and modify. Derivative works must remain open source.  
 
 ---
 
