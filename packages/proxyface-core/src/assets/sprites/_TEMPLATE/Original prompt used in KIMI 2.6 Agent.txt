@@ -1,0 +1,57 @@
+Sprite sheet, transparent PNG, 4096x2048 pixels, 16 columns x 8 rows,
+each cell exactly 256x256 pixels, zero padding between cells.
+
+Subject: single cartoon face, front-facing, centered in each cell,
+cropped at the neck. Style: classic 1993 pixel art,
+32-bit color, hard pixel edges, no anti-aliasing, no gradients.
+Slightly chunky low-res aesthetic but at full 256px resolution per cell.
+
+Character design (consistent across ALL 128 frames):
+- Male face, 40s, grey hair, slightly disheveled
+- Large round nerd glasses with thick dark frames
+- No helmet, no armor
+- Eyes: white sclera only, NO pupils or irises (pupils are a separate layer)
+- Skin tone: warm beige
+- Mouth and brow are the PRIMARY emotion drivers
+
+Row order (label each row clearly with a 1px colored guide strip on
+the LEFT edge only, outside the 4096px content area — or omit guides):
+  Row 1 (y=0):    IDLE       — neutral resting face, slight blink cycle
+  Row 2 (y=256):  THINKING   — brow furrowed inward, eyes narrowed slightly, 
+                               mouth slightly open, head tilts left frames 8-16
+  Row 3 (y=512):  HAPPY      — wide smile, cheeks raised, eyebrows up,
+                               head bobs slightly frames 8-16
+  Row 4 (y=768):  SAD        — brow inner corners raised, mouth corners down,
+                               eyes droop, subtle head droop frames 12-16
+  Row 5 (y=1024): ANGRY      — brows pushed hard down and inward, teeth bared,
+                               jaw clenched, slight forward lean frames 8-16
+  Row 6 (y=1280): SURPRISED  — brows fully raised, mouth wide open O shape,
+                               eyes wide, head snaps back frames 1-4
+  Row 7 (y=1536): EXPLAINING — mouth moves as if talking, hand gestures implied
+                               via shoulder bobbing, brows animated
+  Row 8 (y=1792): ERROR      — face palm implied (hand covers forehead),
+                               eyes closed, grimace, head shakes frames 8-16
+
+Animation guidance per row (16 frames = one seamless loop):
+  - Frames 1-4:   intro / transition in
+  - Frames 5-12:  core loop (must tile seamlessly frame 12 → 5)
+  - Frames 13-16: held peak expression
+  - All rows: include a slow blink somewhere in the loop (2-3 frames)
+
+Technical requirements:
+  - True transparency (alpha channel), no white/black background
+  - No drop shadows, no glow effects, no outlines beyond the character
+  - Consistent face size: head occupies 180x200px centered in the 256x256 cell
+  - Consistent lighting: flat front light, no dynamic shadows between rows
+  - retro palette preferred but not mandatory: 
+    flesh #c87941, hair #888888, glasses #222222, teeth #f0e8d0
+  - File: single flat PNG, no layers, RGB+A, 32-bit
+
+Additional notes to give the artist/generator:
+
+The white eyeballs must have a clean circular mask of exactly 80×50px centered at roughly (128, 110) within each cell — because you'll overlay a separate pupil sprite on top in the browser
+If generating with AI, generate each row separately at 4096×256 (one emotion at a time), then stack them vertically in Photoshop/GIMP/Aseprite — AI tools struggle with 4096×2048 at once
+If using Aseprite: set canvas to 256×256, animate 16 frames, export as sprite sheet → 4096×256, then stack 8 exports vertically. See example attached.
+
+IMPORTANT REMEMBER: Sprite sheet, transparent PNG, 4096x2048 pixels, 16 columns x 8 rows,
+each cell exactly 256x256 pixels, zero padding between cells.
