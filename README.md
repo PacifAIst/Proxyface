@@ -216,3 +216,8 @@ proxyface/
 If ProxyFace made your AI feel alive, [give us a star](https://github.com/PacifAIst/Proxyface) — it helps more than you think.
 
 Contact: [yes@proxyface.com](mailto:yes@proxyface.com)
+
+---
+
+<p align="center">Made with ❤️ for the Local AI Community by PacifAIst</p>
+
