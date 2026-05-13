@@ -1,4 +1,4 @@
-
+<div align="center">
 <pre>
 ██████╗ ██████╗  ██████╗ ██╗  ██╗██╗   ██╗███████╗ █████╗  ██████╗███████╗
 ██╔══██╗██╔══██╗██╔═══██╗╚██╗██╔╝╚██╗ ██╔╝██╔════╝██╔══██╗██╔════╝██╔════╝
@@ -7,17 +7,17 @@
 ██║     ██║  ██║╚██████╔╝██╔╝ ██╗   ██║   ██║     ██║  ██║╚██████╗███████╗
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝
 </pre>
-![License: GPL v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)
-![Monorepo: pnpm | Turborepo](https://img.shields.io/badge/Monorepo-pnpm%20%7C%20Turborepo-orange.svg)
-![Framework: React 18 | TypeScript 5](https://img.shields.io/badge/Framework-React%2018%20%7C%20TypeScript%205-blueviolet.svg)
-![Bundler: Vite 5](https://img.shields.io/badge/Bundler-Vite%205-yellow.svg)
-![Styling: Tailwind CSS 3](https://img.shields.io/badge/Styling-Tailwind%20CSS%203-38B2AC.svg)
-![Emotion Model: TinyBERT INT8](https://img.shields.io/badge/Model-TinyBERT%20INT8-ff69b4.svg)
-![ML Runtime: ONNX WebGPU | WASM](https://img.shields.io/badge/Runtime-ONNX%20WebGPU%20%7C%20WASM-green.svg)
-![Vision: MediaPipe](https://img.shields.io/badge/Vision-MediaPipe-blue.svg)
-![Voice: Web Speech API](https://img.shields.io/badge/Voice-Web%20Speech%20API-orange.svg)
-![Desktop: Electron 30](https://img.shields.io/badge/Desktop-Electron%2030-47848F.svg)
-
+  ![License: GPL v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)
+  ![Monorepo: pnpm | Turborepo](https://img.shields.io/badge/Monorepo-pnpm%20%7C%20Turborepo-orange.svg)
+  ![Framework: React 18 | TypeScript 5](https://img.shields.io/badge/Framework-React%2018%20%7C%20TypeScript%205-blueviolet.svg)
+  ![Bundler: Vite 5](https://img.shields.io/badge/Bundler-Vite%205-yellow.svg)
+  ![Styling: Tailwind CSS 3](https://img.shields.io/badge/Styling-Tailwind%20CSS%203-38B2AC.svg)
+  ![Emotion Model: TinyBERT INT8](https://img.shields.io/badge/Model-TinyBERT%20INT8-ff69b4.svg)
+  ![ML Runtime: ONNX WebGPU | WASM](https://img.shields.io/badge/Runtime-ONNX%20WebGPU%20%7C%20WASM-green.svg)
+  ![Vision: MediaPipe](https://img.shields.io/badge/Vision-MediaPipe-blue.svg)
+  ![Voice: Web Speech API](https://img.shields.io/badge/Voice-Web%20Speech%20API-orange.svg)
+  ![Desktop: Electron 30](https://img.shields.io/badge/Desktop-Electron%2030-47848F.svg)
+<div align="center">
 
 > **Your AI now has a face, emotions, ears, voice, eyes — and a soul.**  
 > 100% local inference. Zero telemetry. Zero cloud. Just vibes.
