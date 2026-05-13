@@ -84,7 +84,10 @@ Zero network calls for inference. Your API key lives in `localStorage`, never tr
 
 ## 🚀 Quickstart
 
-### Web (browser, any OS)
+### Option 1 for non-technical: Drop & run (any hosting, no build needed)
+Download the pre-built web app from [Releases](https://github.com/PacifAIst/Proxyface/releases), unzip the `web/` folder contents, and upload to **any** web host — Namecheap, Hostinger, a $3 VPS, a Raspberry Pi, or even a USB stick served over your local network. No PHP, no Node.js, no database. Just static HTML/CSS/JS that works on Windows, Linux, macOS, and any low-end shared hosting. The AI runs entirely in the visitor's browser — your server only serves files.
+
+### Option 2 for devs: Web (browser, any OS)
 ```bash
 git clone https://github.com/PacifAIst/Proxyface.git
 cd Proxyface
