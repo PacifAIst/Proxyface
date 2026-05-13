@@ -7,7 +7,6 @@
 ██║     ██║  ██║╚██████╔╝██╔╝ ██╗   ██║   ██║     ██║  ██║╚██████╗███████╗
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝
 ```
-<div align="center">
 ![License: GPL v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)
 ![Monorepo: pnpm | Turborepo](https://img.shields.io/badge/Monorepo-pnpm%20%7C%20Turborepo-orange.svg)
 ![Framework: React 18 | TypeScript 5](https://img.shields.io/badge/Framework-React%2018%20%7C%20TypeScript%205-blueviolet.svg)
@@ -18,7 +17,7 @@
 ![Vision: MediaPipe](https://img.shields.io/badge/Vision-MediaPipe-blue.svg)
 ![Voice: Web Speech API](https://img.shields.io/badge/Voice-Web%20Speech%20API-orange.svg)
 ![Desktop: Electron 30](https://img.shields.io/badge/Desktop-Electron%2030-47848F.svg)
-<div\>
+
 
 > **Your AI now has a face, emotions, ears, voice, eyes — and a soul.**  
 > 100% local inference. Zero telemetry. Zero cloud. Just vibes.
