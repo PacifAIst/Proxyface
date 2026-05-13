@@ -68,7 +68,7 @@ MediaPipe face landmarker runs locally. The pupils follow your gaze. No video ev
 - **Natural mode**: browser TTS reads the reply aloud using API TTS (paid, high quality) or the built in (free, medium quality)
 
 ### 🔒 Privacy-proof ([PRIVACY notice](https://github.com/PacifAIst/Proxyface/blob/main/PRIVACY.md))
-Zero network calls for inference. Your API key lives in `localStorage`, never transmitted to us. [GPL-3.0 — read every line](https://github.com/PacifAIst/Proxyface/blob/main/LICENSE).
+Zero network calls for inference. Your API key lives in `localStorage`, never transmitted to us. [GPL-3.0 in every line](https://github.com/PacifAIst/Proxyface/blob/main/LICENSE).
 
 ---
 
