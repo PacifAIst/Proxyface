@@ -84,8 +84,6 @@ Zero network calls for inference. Your API key lives in `localStorage`, never tr
 
 ## 🚀 Quickstart
 
-## 🚀 Quickstart
-
 ### 1. Web app — any device, any hosting, locally or any OS (zero-config)
 
 Download `Proxyface_easy_drop_and_deploy.zip` from [Releases](https://github.com/PacifAIst/Proxyface/releases), unzip, and:
