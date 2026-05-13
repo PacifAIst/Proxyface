@@ -84,8 +84,35 @@ Zero network calls for inference. Your API key lives in `localStorage`, never tr
 
 ## 🚀 Quickstart
 
-### Option 1 for non-technical: Drop & run (any hosting, no build needed)
-Download the pre-built web app from [Releases](https://github.com/PacifAIst/Proxyface/releases), unzip the `web/` folder contents, and upload to **any** web host — Namecheap, Hostinger, a $3 VPS, a Raspberry Pi, or even a USB stick served over your local network. No PHP, no Node.js, no database. Just static HTML/CSS/JS that works on Windows, Linux, macOS, and any low-end shared hosting. The AI runs entirely in the visitor's browser — your server only serves files.
+## 🚀 Quickstart
+
+### 1. Web app — any device, any hosting, locally or any OS (zero-config)
+
+Download `Proxyface_easy_drop_and_deploy.zip` from [Releases](https://github.com/PacifAIst/Proxyface/releases), unzip, and:
+
+| Platform | How to run |
+|----------|-----------|
+| **Windows** | Double-click `START.bat` — console opens, browser launches at `localhost:8080`. If Node.js is used as fallback, press `Y` when prompted, then wait a few seconds. |
+| **Mac / Linux** | Terminal: `chmod +x START.sh && ./START.sh` — browser opens automatically |
+| **iOS** | Use Safari at [proxyface.com](https://proxyface.com) — local files not supported |
+| **Android** | Install [Termux](https://f-droid.org/packages/com.termux/), run `pkg install python && python -m http.server 8080`, open Chrome at `http://localhost:8080` |
+| **Web host** | Upload all contents to `public_html/`. For subfolders, also copy `sprites/`, `models/`, `sounds/`, `easter.mp3` to web root |
+
+It work in any low-end webhost like Namecheap etc... no build, no PHP, no Node.js, no database. The AI runs entirely in the browser.
+
+---
+
+## ⚠️ Troubleshooting
+
+| Problem | Fix |
+|---------|-----|
+| White screen | Ensure `sprites/`, `models/`, `sounds/` folders are present |
+| 404 errors for sprites | If in a subfolder, copy folders to web root (see table above) |
+| CORS error opening `index.html` directly | Use `START.bat` / `START.sh` instead of double-clicking HTML |
+| Mic not working | Use HTTPS on web hosts. Browser permission required. |
+| Sounds not playing | Ensure `sounds/` and `easter.mp3` are in the web root |
+
+---
 
 ### Option 2 for devs: Web (browser, any OS)
 ```bash
@@ -96,11 +123,11 @@ cd apps/web && pnpm dev
 # open http://localhost:5173
 ```
 
-### Windows desktop app
+### Option 3 Windows desktop app
 Download **[ProxyFace Setup 0.1.0.exe](https://github.com/PacifAIst/Proxyface/releases/latest)** from Releases.  
 > Windows SmartScreen may appear — click **More info → Run anyway**. This is expected for unsigned indie apps.
 
-### Mock mode (no API key needed)
+### Option 4 Mock mode (no API key needed)
 Visit `http://localhost:5173/?mock=1` — uses a regex classifier instead of the neural model. Good for UI testing.
 
 ---
