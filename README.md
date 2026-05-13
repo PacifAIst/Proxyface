@@ -140,7 +140,7 @@ There are hidden features.
 
 ---
 
-## 🎨 Submit your art
+## 🎨 Submit your art ([see detailed instructions here](https://github.com/PacifAIst/Proxyface/blob/main/apps/web/public/sprites/_TEMPLATE/Original%20prompt%20used%20in%20KIMI%202.6%20Agent.txt))
 
 Want your character in the official gallery?
 
