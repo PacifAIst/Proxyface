@@ -1,12 +1,12 @@
 
-```text
+<pre>
 ██████╗ ██████╗  ██████╗ ██╗  ██╗██╗   ██╗███████╗ █████╗  ██████╗███████╗
 ██╔══██╗██╔══██╗██╔═══██╗╚██╗██╔╝╚██╗ ██╔╝██╔════╝██╔══██╗██╔════╝██╔════╝
 ██████╔╝██████╔╝██║   ██║ ╚███╔╝  ╚████╔╝ █████╗  ███████║██║     █████╗
 ██╔═══╝ ██╔══██╗██║   ██║ ██╔██╗   ╚██╔╝  ██╔══╝  ██╔══██║██║     ██╔══╝
 ██║     ██║  ██║╚██████╔╝██╔╝ ██╗   ██║   ██║     ██║  ██║╚██████╗███████╗
 ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝
-```
+</pre>
 ![License: GPL v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)
 ![Monorepo: pnpm | Turborepo](https://img.shields.io/badge/Monorepo-pnpm%20%7C%20Turborepo-orange.svg)
 ![Framework: React 18 | TypeScript 5](https://img.shields.io/badge/Framework-React%2018%20%7C%20TypeScript%205-blueviolet.svg)
