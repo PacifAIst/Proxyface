@@ -89,7 +89,7 @@ export function CharacterShowroom({ onSelect, selectedId, compact = false, hideS
               ✦✦ Your AI Now Has a Face with Emotions, Ears, Voice and Eyes! ✦✦
             </h2>
             <p className="mt-1 text-[13px] italic text-phosphor-dim/70">
-              Click "USE THIS PROXYFACE" to Select your Art & then click "SETTINGS" for your local LLM (e.g., LM Studio Server) or API and SAVE
+              Click "USE THIS PROXYFACE" to Select your Art & then click "SETTINGS" for your local AI (e.g., LM Studio Server) or API and SAVE
             </p>
           </div>
           <label className="flex shrink-0 cursor-pointer items-center gap-2 pt-0.5 text-[9px] uppercase tracking-widest text-phosphor-dim">
